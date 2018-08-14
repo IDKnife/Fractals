@@ -8,19 +8,42 @@ using System.Threading.Tasks;
 
 namespace Fractals
 {
+    /// <summary>
+    /// Представляет экземпляр фрактала Жюлиа.
+    /// </summary>
     public class JuliaFractal : IJuliaFractal
     {
+        /// <inheritdoc cref="IJuliaFractal.C"/>
         public Complex C { get; set; }
-        public int Iterations { get; set; }
+
+        /// <inheritdoc cref="IFractalBase.Iterations"/>
+        public int Iterations { get ; set; }
+
+        /// <inheritdoc cref="IFractalBase.Zoom"/>
         public double Zoom { get; set; }
+
+        /// <inheritdoc cref="IFractalBase.MoveX"/>
         public double MoveX { get; set; }
+
+        /// <inheritdoc cref="IFractalBase.MoveY"/>
         public double MoveY { get; set; }
+
+        /// <inheritdoc cref="IBaseImage.Width"/>
         public int Width { get; set; }
+
+        /// <inheritdoc cref="IBaseImage.Height"/>
         public int Height { get; set; }
+
+        /// <inheritdoc cref="IBaseImage.R"/>
         public int R { get; set; }
+
+        /// <inheritdoc cref="IBaseImage.G"/>
         public int G { get; set; }
+
+        /// <inheritdoc cref="IBaseImage.B"/>
         public int B { get; set; }
 
+        /// <inheritdoc cref="IFractalBase.GetColors"/>
         public Color[] GetColors()
         {
             Color[] _colors;
@@ -28,50 +51,31 @@ namespace Fractals
             return _colors;
         }
 
+        /// <inheritdoc cref="IBaseImage.Draw"/>
         public Bitmap Draw()
         {
             Color[] _colors = GetColors();
             Bitmap fractal = new Bitmap(Width, Height);
-
             C = new Complex(-0.70176, -0.3842);
             Zoom = 1;
             MoveX = 0;
             MoveY = 0;
             Iterations = 300;
-
-
-            //"перебираем" каждый пиксель
             for (int x = 0; x < Width; x++)
                 for (int y = 0; y < Height; y++)
                 {
-                    //вычисляется реальная и мнимая части числа z
-                    //на основе расположения пикселей,масштабирования и значения позиции
                     Complex newC = new Complex(1.5 * (x - Width / 2) / (0.5 * Zoom * Width) + MoveX,
                                                      (y - Height / 2) / (0.5 * Zoom * Height) + MoveY);
-
-                    //i представляет собой число итераций 
                     int i;
-
-                    //начинается процесс итерации
                     for (i = 0; i < Iterations; i++)
                     {
                         Complex oldC = newC;
-
-
-                        // в текущей итерации вычисляются действительная и мнимая части 
                         newC = new Complex(oldC.Real * oldC.Real - oldC.Imaginary * oldC.Imaginary + C.Real,
                                                                 2 * oldC.Real * oldC.Imaginary + C.Imaginary);
-
-                        // если точка находится вне круга с радиусом 2 - прерываемся
                         if ((newC.Real * newC.Real + newC.Imaginary * newC.Imaginary) > 4) break;
                     }
-
-
                     fractal.SetPixel(x, y, _colors[i % 256]);
                 }
-            
-
-
             return fractal;
         }
     }
