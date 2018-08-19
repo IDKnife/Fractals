@@ -12,10 +12,15 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             JuliaFractal jf = new JuliaFractal();
-            jf.Width = 1024;
+            MandelbrotFractal mf = new MandelbrotFractal();
+            jf.Width = 1366;
             jf.Height = 768;
             var bitmap = jf.Draw();
-            bitmap.Save("example.jpg");
+            bitmap.Save("example3.jpg");
+            mf.Width = 1366;
+            mf.Height = 768;
+            var bitmap2 = mf.Draw();
+            bitmap2.Save("example4.jpg");
         }
     }
 }

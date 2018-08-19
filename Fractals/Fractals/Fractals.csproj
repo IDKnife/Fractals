@@ -51,11 +51,16 @@
     <Compile Include="IBaseImage.cs" />
     <Compile Include="IFractalBase.cs" />
     <Compile Include="IJuliaFractal.cs" />
+    <Compile Include="IMandelbrotFractal.cs" />
     <Compile Include="JuliaFractal.cs" />
+    <Compile Include="MandelbrotFractal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ToDoList.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
