@@ -26,8 +26,8 @@ namespace Fractals
         /// Возвращает массив цветов.
         /// </summary>
         /// <returns>Массив цветов</returns>
-        Color[] GetColors();
-
+        Color[] Colors { get; set; }
+        
         /// <summary>
         /// Возвращает смещение по Х.
         /// </summary>

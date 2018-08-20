@@ -43,24 +43,16 @@ namespace Fractals
         /// <inheritdoc cref="IBaseImage.B"/>
         public int B { get; set; }
 
-        /// <inheritdoc cref="IFractalBase.GetColors"/>
-        public Color[] GetColors()
-        {
-            Color[] _colors;
-            _colors = Enumerable.Range(0, 256).Select(c => Color.FromArgb(((c & R) * 85) % 256, ((c >> G) * 36) % 256, ((c >> R & B) * 36) % 256)).ToArray();
-            return _colors;
-        }
+        /// <inheritdoc cref="IFractalBase.Colors"/>
+        public Color[] Colors { get; set; }
+
+        /// <inheritdoc cref="IColorsFactory.GetColors(int, int, int)"/>
+        public IColorsFactory ColorsFactory { get; set; }
 
         /// <inheritdoc cref="IBaseImage.Draw"/>
         public Bitmap Draw()
         {
-            Color[] _colors = GetColors();
             Bitmap fractal = new Bitmap(Width, Height);
-            C = new Complex(-0.70176, -0.3842);
-            Zoom = 1;
-            MoveX = 0;
-            MoveY = 0;
-            Iterations = 300;
             for (int x = 0; x < Width; x++)
                 for (int y = 0; y < Height; y++)
                 {
@@ -74,9 +66,29 @@ namespace Fractals
                                                                 2 * oldC.Real * oldC.Imaginary + C.Imaginary);
                         if ((newC.Real * newC.Real + newC.Imaginary * newC.Imaginary) > 4) break;
                     }
-                    fractal.SetPixel(x, y, _colors[i % 256]);
+                    fractal.SetPixel(x, y, Colors[i % 256]);
                 }
             return fractal;
+        }
+
+        /// <summary>
+        /// Инициализирует новый экземпляр класса <see cref="JuliaFractal"/> с заданными значениями.
+        /// </summary>
+        /// <param name="colorsFactory">Фабрика цветов</param>
+        public JuliaFractal(IColorsFactory colorsFactory)
+        {
+            ColorsFactory = colorsFactory;
+            R = 1;
+            G = 1;
+            B = 1;
+            Colors = ColorsFactory.GetColors(R, G, B);
+            Width = 1366;
+            Height = 768;
+            Zoom = 1;
+            Iterations = 300;
+            C = new Complex(-0.70176, -0.3842);
+            MoveX = 0;
+            MoveY = 0;
         }
     }
 }
