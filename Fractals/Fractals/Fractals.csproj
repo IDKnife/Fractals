@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ColorsFactory.cs" />
+    <Compile Include="ColorsFactoryBase.cs" />
     <Compile Include="IBaseImage.cs" />
     <Compile Include="IColorsFactory.cs" />
     <Compile Include="IFractalBase.cs" />

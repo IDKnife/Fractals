@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
+﻿using System.Drawing;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Fractals
 {
@@ -49,23 +44,24 @@ namespace Fractals
         /// <inheritdoc cref="IBaseImage.Draw"/>
         public Bitmap Draw()
         {
-            Bitmap fractal = new Bitmap(Width, Height);
-            Complex C;
-            for (int x = 0; x < Width; x++)
+            var fractal = new Bitmap(Width, Height);
+            Complex C, newC, oldC;
+            for (var x = 0; x < Width; x++)
             {
-                for (int y = 0; y < Height; y++)
+                for (var y = 0; y < Height; y++)
                 {
-                    C = new Complex((x - Width / 2) / (0.25 * Zoom * Width) + MoveX,
-                                    (y - Height / 2) / (0.25 * Zoom * Height) + MoveY);
-                    Complex newC = new Complex(0, 0);
+                    C = new Complex((x - Width / 2) / (0.5 * Zoom * Width) + MoveX,
+                                    (y - Height / 2) / (0.5 * Zoom * Height) + MoveY);
+                    newC = new Complex(0, 0);
                     int i = 0;
                     do
                     {
                         i++;
-                        Complex oldC = newC;
+                        oldC = newC;
                         newC = new Complex(oldC.Real * oldC.Real - oldC.Imaginary * oldC.Imaginary + C.Real,
                                                                 2 * oldC.Real * oldC.Imaginary + C.Imaginary);
-                        if (Math.Sqrt((newC.Real * newC.Real + newC.Imaginary * newC.Imaginary)) > 2) break;
+                        if ((newC.Real * newC.Real + newC.Imaginary * newC.Imaginary) > 4)
+                            break;
                     }
                     while (i < Iterations);
                     fractal.SetPixel(x, y, Colors[i % 256]);
@@ -81,16 +77,62 @@ namespace Fractals
         public MandelbrotFractal(IColorsFactory colorsFactory)
         {
             ColorsFactory = colorsFactory;
-            R = 1;
+            R = 5;
             G = 1;
             B = 1;
-            Colors = ColorsFactory.GetColors(R,G,B);
-            Width = 1366;
-            Height = 768;
+            Colors = ColorsFactory.GetColors(R, G, B);
+            Width = 1920;
+            Height = 1080;
             Zoom = 1;
-            Iterations = 100;
-            MoveX = 0;
+            Iterations = 300;
+            MoveX = -0.5;
             MoveY = 0;
+        }
+
+        /// <summary>
+        /// Инициализирует новый экземпляр класса <see cref="MandelbrotFractal"/> с базовыми значениями.
+        /// </summary>
+        public MandelbrotFractal()
+        {
+            ColorsFactory = new ColorsFactoryBase();
+            R = 5;
+            G = 1;
+            B = 1;
+            Colors = ColorsFactory.GetColors(R, G, B);
+            Width = 1920;
+            Height = 1080;
+            Zoom = 1;
+            Iterations = 300;
+            MoveX = -0.5;
+            MoveY = 0;
+        }
+
+        /// <summary>
+        /// Инициализирует новый экземпляр класса <see cref="MandelbrotFractal"/> с заданными значениями.
+        /// </summary>
+        /// <param name="colorsFactory">Фабрика цветов</param>
+        /// <param name="r">Компонент цвета r</param>
+        /// <param name="b">Компонент цвета b</param>
+        /// <param name="g">Компонент цвета g</param>
+        /// <param name="width">Ширина</param>
+        /// <param name="height">Высота</param>
+        /// <param name="zoom">Увеличение</param>
+        /// <param name="iterations">Кол-во итераций</param>
+        /// <param name="movex">Смещение по Х</param>
+        /// <param name="movey">Смещение по Y</param>
+        public MandelbrotFractal(IColorsFactory colorsFactory, int r, int b, int g, int width, int height, double zoom, int iterations, double movex, double movey)
+        {
+            ColorsFactory = colorsFactory;
+            R = r;
+            G = g;
+            B = b;
+            Colors = ColorsFactory.GetColors(R, G, B);
+            Width = width;
+            Height = height;
+            Zoom = zoom;
+            Iterations = iterations;
+            MoveX = movex;
+            MoveY = movey;
         }
     }
 }
