@@ -12,7 +12,7 @@ namespace Fractals
         public Complex C { get; set; }
 
         /// <inheritdoc cref="IFractalBase.Iterations"/>
-        public int Iterations { get ; set; }
+        public int Iterations { get; set; }
 
         /// <inheritdoc cref="IFractalBase.Zoom"/>
         public double Zoom { get; set; }
@@ -91,20 +91,8 @@ namespace Fractals
         /// <summary>
         /// Инициализирует новый экземпляр класса <see cref="JuliaFractal"/> с базовыми значениями.
         /// </summary>
-        public JuliaFractal()
+        public JuliaFractal() : this(new ColorsFactoryBase(), 10, 6, 3, 1920, 1080, 1, 300, 0, 0, new Complex(-0.70176, -0.3842))
         {
-            ColorsFactory = new ColorsFactoryBase();
-            R = 5;
-            G = 1;
-            B = 1;
-            Colors = ColorsFactory.GetColors(R, G, B);
-            Width = 1920;
-            Height = 1080;
-            Zoom = 1;
-            Iterations = 300;
-            MoveX = -0.5;
-            MoveY = 0;
-            C = new Complex(-0.70176, -0.3842);
         }
 
         /// <summary>

@@ -92,19 +92,8 @@ namespace Fractals
         /// <summary>
         /// Инициализирует новый экземпляр класса <see cref="MandelbrotFractal"/> с базовыми значениями.
         /// </summary>
-        public MandelbrotFractal()
+        public MandelbrotFractal() : this(new ColorsFactoryBase(), 5, 1, 1, 1920, 1080, 1, 300, -0.5, 0)
         {
-            ColorsFactory = new ColorsFactoryBase();
-            R = 5;
-            G = 1;
-            B = 1;
-            Colors = ColorsFactory.GetColors(R, G, B);
-            Width = 1920;
-            Height = 1080;
-            Zoom = 1;
-            Iterations = 300;
-            MoveX = -0.5;
-            MoveY = 0;
         }
 
         /// <summary>
