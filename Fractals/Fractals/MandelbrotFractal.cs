@@ -20,19 +20,19 @@ namespace Fractals
         /// <inheritdoc cref="IFractalBase.MoveY"/>
         public double MoveY { get; set; }
 
-        /// <inheritdoc cref="IBaseImage.Width"/>
+        /// <inheritdoc cref="IImageBase.Width"/>
         public int Width { get; set; }
 
-        /// <inheritdoc cref="IBaseImage.Height"/>
+        /// <inheritdoc cref="IImageBase.Height"/>
         public int Height { get; set; }
 
-        /// <inheritdoc cref="IBaseImage.R"/>
+        /// <inheritdoc cref="IImageBase.R"/>
         public int R { get; set; }
 
-        /// <inheritdoc cref="IBaseImage.G"/>
+        /// <inheritdoc cref="IImageBase.G"/>
         public int G { get; set; }
 
-        /// <inheritdoc cref="IBaseImage.B"/>
+        /// <inheritdoc cref="IImageBase.B"/>
         public int B { get; set; }
 
         /// <inheritdoc cref="IFractalBase.Colors"/>
@@ -41,7 +41,7 @@ namespace Fractals
         /// <inheritdoc cref="IColorsFactory.GetColors(int, int, int)"/>
         public IColorsFactory ColorsFactory { get; set; }
 
-        /// <inheritdoc cref="IBaseImage.Draw"/>
+        /// <inheritdoc cref="IImageBase.Draw"/>
         public Bitmap Draw()
         {
             var fractal = new Bitmap(Width, Height);
@@ -74,26 +74,16 @@ namespace Fractals
         /// Инициализирует новый экземпляр класса <see cref="MandelbrotFractal"/> с заданными значениями.
         /// </summary>
         /// <param name="colorsFactory">Фабрика цветов</param>
-        public MandelbrotFractal(IColorsFactory colorsFactory)
+        public MandelbrotFractal(IColorsFactory colorsFactory) : this(colorsFactory, 1, 1, 1, 1920, 1080, 1, 300, -0.5, 0)
         {
-            ColorsFactory = colorsFactory;
-            R = 5;
-            G = 1;
-            B = 1;
-            Colors = ColorsFactory.GetColors(R, G, B);
-            Width = 1920;
-            Height = 1080;
-            Zoom = 1;
-            Iterations = 300;
-            MoveX = -0.5;
-            MoveY = 0;
         }
 
         /// <summary>
         /// Инициализирует новый экземпляр класса <see cref="MandelbrotFractal"/> с базовыми значениями.
         /// </summary>
-        public MandelbrotFractal() : this(new ColorsFactoryBase(), 5, 1, 1, 1920, 1080, 1, 300, -0.5, 0)
+        public MandelbrotFractal() : this(new ColorsFactoryBase(), 1, 1, 1, 1920, 1080, 1, 300, -0.5, 0)
         {
+            // ToDo: вынести значения по умолчанию в константу
         }
 
         /// <summary>
@@ -109,7 +99,7 @@ namespace Fractals
         /// <param name="iterations">Кол-во итераций</param>
         /// <param name="movex">Смещение по Х</param>
         /// <param name="movey">Смещение по Y</param>
-        public MandelbrotFractal(IColorsFactory colorsFactory, int r, int b, int g, int width, int height, double zoom, int iterations, double movex, double movey)
+        protected MandelbrotFractal(IColorsFactory colorsFactory, int r, int b, int g, int width, int height, double zoom, int iterations, double movex, double movey)
         {
             ColorsFactory = colorsFactory;
             R = r;

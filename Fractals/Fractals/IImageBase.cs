@@ -5,7 +5,7 @@ namespace Fractals
     /// <summary>
     /// Интерфейс базового изображения.
     /// </summary>
-    interface IBaseImage
+    public interface IImageBase
     {
         /// <summary>
         /// Осуществляет создание изображения.

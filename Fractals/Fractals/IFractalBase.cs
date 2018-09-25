@@ -5,7 +5,7 @@ namespace Fractals
     /// <summary>
     /// Интерфейс базового фрактала.
     /// </summary>
-    interface IFractalBase : IBaseImage
+    public interface IFractalBase : IImageBase
     {
         /// <summary>
         /// Возвращает количество итераций.

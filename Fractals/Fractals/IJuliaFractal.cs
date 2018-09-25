@@ -5,7 +5,7 @@ namespace Fractals
     /// <summary>
     /// Интерфейс фрактала Жюлиа.
     /// </summary>
-    interface IJuliaFractal : IFractalBase
+    public interface IJuliaFractal : IFractalBase
     {
         /// <summary>
         /// Возвращает комплексное число необходимое для вычислений в алгоритме Жюлиа.
