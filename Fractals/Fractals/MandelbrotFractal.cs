@@ -8,11 +8,9 @@ namespace Fractals
     /// </summary>
     public class MandelbrotFractal : FractalBase, IMandelbrotFractal
     {
-        /// <inheritdoc cref="IImageBase.Draw"/>
-        public override Bitmap Draw()
+        /// <inheritdoc cref="FractalBase.DrawInner"/>
+        protected override void DrawInner(Bitmap fractal)
         {
-            Colors = ColorsFactory.GetColors(R, G, B);
-            var fractal = new Bitmap(Width, Height);
             Complex C, newC, oldC;
             for (var x = 0; x < Width; x++)
             {
@@ -35,11 +33,11 @@ namespace Fractals
                     fractal.SetPixel(x, y, Colors[i % 256]);
                 }
             }
-            return fractal;
         }
 
+
         /// <summary>
-        /// Инициализирует новый экземпляр класса <see cref="MandelbrotFractal"/> с заданными значениями.
+        /// Инициализирует новый экземпляр класса <see cref="MandelbrotFractal"/> с заданным значением фабрики цветов.
         /// </summary>
         /// <param name="colorsFactory">Фабрика цветов</param>
         public MandelbrotFractal(IColorsFactory colorsFactory) : base(colorsFactory)

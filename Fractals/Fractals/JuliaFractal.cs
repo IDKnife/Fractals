@@ -13,11 +13,9 @@ namespace Fractals
         /// <inheritdoc cref="IJuliaFractal.C"/>
         public Complex C { get; set; }
 
-        /// <inheritdoc cref="IImageBase.Draw"/>
-        public override Bitmap Draw()
+        /// <inheritdoc cref="FractalBase.DrawInner"/>
+        protected override void DrawInner(Bitmap fractal)
         {
-            Colors = ColorsFactory.GetColors(R, G, B);
-            var fractal = new Bitmap(Width, Height);
             Complex newC, oldC;
             for (var x = 0; x < Width; x++)
                 for (var y = 0; y < Height; y++)
@@ -35,11 +33,10 @@ namespace Fractals
                     }
                     fractal.SetPixel(x, y, Colors[i % 256]);
                 }
-            return fractal;
         }
 
         /// <summary>
-        /// Инициализирует новый экземпляр класса <see cref="JuliaFractal"/> с заданными значениями.
+        /// Инициализирует новый экземпляр класса <see cref="JuliaFractal"/> с заданным значением фабрики цветов.
         /// </summary>
         /// <param name="colorsFactory">Фабрика цветов</param>
         public JuliaFractal(IColorsFactory colorsFactory) : base(colorsFactory)

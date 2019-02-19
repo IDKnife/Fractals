@@ -1,60 +1,53 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Fractals;
 
 namespace WindowsFormsApp2
 {
-    public partial class Form1 : Form
+    public partial class Fractals : Form
     {
-        private Dictionary<int, IFractalBase> _fractals = new Dictionary<int, IFractalBase>();
+        private Dictionary<int, FractalViewModel> _fractalviewmodels = new Dictionary<int, FractalViewModel>();
         private IFractalBase _selectedFractal;
-        private Bitmap _image;
 
-        public Form1()
+        public Fractals()
         {
             // ToDo: Значения по умолчанию при открытии формы (FormLoad)
             InitializeComponent();
 
             // ToDo: загружать словарь фракталов извне
-            _fractals.Add(0, new MandelbrotFractal());
-            _fractals.Add(1, new JuliaFractal());
-            _selectedFractal = _fractals[0];
+            _fractalviewmodels.Add(0, new FractalViewModel { Fractal = new MandelbrotFractal()});
+            _fractalviewmodels.Add(1, new FractalViewModel { Fractal = new JuliaFractal() });
+            _selectedFractal = _fractalviewmodels[0].Fractal;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 0;
-            TextBoxR_1.Text = _fractals[0].R.ToString();
-            TextBoxR_2.Text = _fractals[1].R.ToString();
-            TextBoxB_1.Text = _fractals[0].B.ToString();
-            TextBoxB_2.Text = _fractals[1].B.ToString();
-            TextBoxG_1.Text = _fractals[0].G.ToString();
-            TextBoxG_2.Text = _fractals[1].G.ToString();
-            TextBoxWidth_1.Text = _fractals[0].Width.ToString();
-            TextBoxWidth_2.Text = _fractals[1].Width.ToString();
-            TextBoxHeight_1.Text = _fractals[0].Height.ToString();
-            TextBoxHeight_2.Text = _fractals[1].Height.ToString();
-            TextBoxZoom_1.Text = _fractals[0].Zoom.ToString();
-            TextBoxZoom_2.Text = _fractals[1].Zoom.ToString();
-            TextBoxIterations_1.Text = _fractals[0].Iterations.ToString();
-            TextBoxIterations_2.Text = _fractals[1].Iterations.ToString();
-            TextBoxMoveX_1.Text = _fractals[0].MoveX.ToString();
-            TextBoxMoveX_2.Text = _fractals[1].MoveX.ToString();
-            TextBoxMoveY_1.Text = _fractals[0].MoveY.ToString();
-            TextBoxMoveY_2.Text = _fractals[1].MoveY.ToString();
-            var temp = _fractals[1] as JuliaFractal;
+            TextBoxR_1.Text = _fractalviewmodels[0].Fractal.R.ToString();
+            TextBoxR_2.Text = _fractalviewmodels[1].Fractal.R.ToString();
+            TextBoxB_1.Text = _fractalviewmodels[0].Fractal.B.ToString();
+            TextBoxB_2.Text = _fractalviewmodels[1].Fractal.B.ToString();
+            TextBoxG_1.Text = _fractalviewmodels[0].Fractal.G.ToString();
+            TextBoxG_2.Text = _fractalviewmodels[1].Fractal.G.ToString();
+            TextBoxWidth_1.Text = _fractalviewmodels[0].Fractal.Width.ToString();
+            TextBoxWidth_2.Text = _fractalviewmodels[1].Fractal.Width.ToString();
+            TextBoxHeight_1.Text = _fractalviewmodels[0].Fractal.Height.ToString();
+            TextBoxHeight_2.Text = _fractalviewmodels[1].Fractal.Height.ToString();
+            TextBoxZoom_1.Text = _fractalviewmodels[0].Fractal.Zoom.ToString();
+            TextBoxZoom_2.Text = _fractalviewmodels[1].Fractal.Zoom.ToString();
+            TextBoxIterations_1.Text = _fractalviewmodels[0].Fractal.Iterations.ToString();
+            TextBoxIterations_2.Text = _fractalviewmodels[1].Fractal.Iterations.ToString();
+            TextBoxMoveX_1.Text = _fractalviewmodels[0].Fractal.MoveX.ToString();
+            TextBoxMoveY_1.Text = _fractalviewmodels[0].Fractal.MoveY.ToString();
+            TextBoxMoveY_2.Text = _fractalviewmodels[1].Fractal.MoveY.ToString();
+            TextBoxMoveX_2.Text = _fractalviewmodels[1].Fractal.MoveX.ToString();
+            var temp = _fractalviewmodels[1].Fractal as JuliaFractal;
             TextBoxC_Re_2.Text = temp.C.Real.ToString();
             TextBoxC_Im_2.Text = temp.C.Imaginary.ToString();
         }
 
-        private void ButtonGenerate_Click(object sender, EventArgs e)
+        private void ButtonGenerateMF_Click(object sender, EventArgs e)
         {
             var mf = _selectedFractal as MandelbrotFractal;
             if (mf == null)
@@ -71,19 +64,19 @@ namespace WindowsFormsApp2
             mf.Iterations = int.TryParse(TextBoxIterations_1.Text, out temp1) ? temp1 : mf.Iterations;
             mf.MoveX = double.TryParse(TextBoxMoveX_1.Text, out temp2) ? temp2 : mf.MoveX;
             mf.MoveY = double.TryParse(TextBoxMoveY_1.Text, out temp2) ? temp2 : mf.MoveY;
-            _image = mf.Draw();
-            PictureBoxMandelbrot.Image = _image;
+            _fractalviewmodels[0].Image= mf.Draw();
+            PictureBoxMandelbrot.Image = _fractalviewmodels[0].Image;
         }
 
-        private void ButtonSave_Click(object sender, EventArgs e)
+        private void ButtonSaveMF_Click(object sender, EventArgs e)
         {
-            _image.Save("MF.jpg");
+            _fractalviewmodels[0].Image.Save("MF.jpg");
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (_fractals.ContainsKey(tabControl1.SelectedIndex))
-                _selectedFractal = _fractals[tabControl1.SelectedIndex];
+            if (_fractalviewmodels.ContainsKey(tabControl1.SelectedIndex))
+                _selectedFractal = _fractalviewmodels[tabControl1.SelectedIndex].Fractal;
         }
         // ToDo: написать методы проверки корректности текстбокса 
 
@@ -198,12 +191,12 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void ButtonSave_2_Click(object sender, EventArgs e)
+        private void ButtonSaveJF_Click(object sender, EventArgs e)
         {
-            _image.Save("JF.jpg");
+            _fractalviewmodels[1].Image.Save("JF.jpg");
         }
 
-        private void ButtonGenerate_2_Click(object sender, EventArgs e)
+        private void ButtonGenerateJF_Click(object sender, EventArgs e)
         {
             var jf = _selectedFractal as JuliaFractal;
             if (jf == null)
@@ -223,8 +216,8 @@ namespace WindowsFormsApp2
             tempR = double.TryParse(TextBoxC_Re_2.Text, out temp2) ? temp2 : jf.C.Real;
             tempI = double.TryParse(TextBoxC_Im_2.Text, out temp2) ? temp2 : jf.C.Imaginary;
             jf.C = new System.Numerics.Complex(tempR, tempI);
-            _image = jf.Draw();
-            PictureBoxJulia.Image = _image;
+            _fractalviewmodels[1].Image = jf.Draw();
+            PictureBoxJulia.Image = _fractalviewmodels[1].Image;
         }
     }
 }

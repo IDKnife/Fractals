@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Fractals
 {
     /// <summary>
@@ -56,10 +52,22 @@ namespace Fractals
         public IColorsFactory ColorsFactory { get; set; }
 
         /// <inheritdoc cref="IImageBase.Draw"/>
-        abstract public Bitmap Draw();
+        virtual public Bitmap Draw()
+        {
+            Colors = ColorsFactory.GetColors(R, G, B);
+            var fractal = new Bitmap(Width, Height);
+            DrawInner(fractal);
+            return fractal;
+        }
 
         /// <summary>
-        ///  Инициализирует новый экземпляр класса <see cref="FractalBase"/> с заданными значениями.
+        /// Метод, выполняющий отрисовку фрактала.
+        /// </summary>
+        /// <param name="fractal">Изображение фрактала</param>
+        protected abstract void DrawInner(Bitmap fractal);
+
+        /// <summary>
+        ///  Инициализирует новый экземпляр класса <see cref="FractalBase"/> с заданными значениями поля фабрика цветов.
         /// </summary>
         /// <param name="colorsFactory">Фабрика цветов</param>
         public FractalBase(IColorsFactory colorsFactory) : this(colorsFactory, R_CONST, B_CONST, G_CONST, WIDTH, HEIGHT, ZOOM, ITERATIONS, MOVEX, MOVEY)
@@ -74,7 +82,7 @@ namespace Fractals
         }
 
         /// <summary>
-        ///  Инициализирует новый экземпляр класса <see cref="FractalBase"/> с заданными значениями.
+        /// Инициализирует новый экземпляр класса <see cref="FractalBase"/> с заданными значениями.
         /// </summary>
         /// <param name="colorsFactory">Фабрика цветов</param>
         /// <param name="r">Компонент цвета r</param>
