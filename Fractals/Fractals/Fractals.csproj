@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColorsFactoryBase.cs" />
+    <Compile Include="FractalBase.cs" />
     <Compile Include="IImageBase.cs" />
     <Compile Include="IColorsFactory.cs" />
     <Compile Include="IFractalBase.cs" />

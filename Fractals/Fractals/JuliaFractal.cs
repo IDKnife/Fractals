@@ -6,47 +6,17 @@ namespace Fractals
     /// <summary>
     /// Представляет экземпляр фрактала Жюлиа.
     /// </summary>
-    public class JuliaFractal : IJuliaFractal
+    public class JuliaFractal : FractalBase, IJuliaFractal
     {
+        private const double C_RE_CONST = -0.70176;
+        private const double C_IM_CONST = -0.3842;
         /// <inheritdoc cref="IJuliaFractal.C"/>
         public Complex C { get; set; }
 
-        /// <inheritdoc cref="IFractalBase.Iterations"/>
-        public int Iterations { get; set; }
-
-        /// <inheritdoc cref="IFractalBase.Zoom"/>
-        public double Zoom { get; set; }
-
-        /// <inheritdoc cref="IFractalBase.MoveX"/>
-        public double MoveX { get; set; }
-
-        /// <inheritdoc cref="IFractalBase.MoveY"/>
-        public double MoveY { get; set; }
-
-        /// <inheritdoc cref="IImageBase.Width"/>
-        public int Width { get; set; }
-
-        /// <inheritdoc cref="IImageBase.Height"/>
-        public int Height { get; set; }
-
-        /// <inheritdoc cref="IImageBase.R"/>
-        public int R { get; set; }
-
-        /// <inheritdoc cref="IImageBase.G"/>
-        public int G { get; set; }
-
-        /// <inheritdoc cref="IImageBase.B"/>
-        public int B { get; set; }
-
-        /// <inheritdoc cref="IFractalBase.Colors"/>
-        public Color[] Colors { get; set; }
-
-        /// <inheritdoc cref="IColorsFactory.GetColors(int, int, int)"/>
-        public IColorsFactory ColorsFactory { get; set; }
-
         /// <inheritdoc cref="IImageBase.Draw"/>
-        public Bitmap Draw()
+        public override Bitmap Draw()
         {
+            Colors = ColorsFactory.GetColors(R, G, B);
             var fractal = new Bitmap(Width, Height);
             Complex newC, oldC;
             for (var x = 0; x < Width; x++)
@@ -72,14 +42,15 @@ namespace Fractals
         /// Инициализирует новый экземпляр класса <see cref="JuliaFractal"/> с заданными значениями.
         /// </summary>
         /// <param name="colorsFactory">Фабрика цветов</param>
-        public JuliaFractal(IColorsFactory colorsFactory) : this(colorsFactory, 10, 6, 3, 1920, 1080, 1, 300, 0, 0, new Complex(-0.70176, -0.3842))
+        public JuliaFractal(IColorsFactory colorsFactory) : base(colorsFactory)
         {
+            C = new Complex(C_RE_CONST, C_IM_CONST);
         }
 
         /// <summary>
         /// Инициализирует новый экземпляр класса <see cref="JuliaFractal"/> с базовыми значениями.
         /// </summary>
-        public JuliaFractal() : this(new ColorsFactoryBase(), 10, 6, 3, 1920, 1080, 1, 300, 0, 0, new Complex(-0.70176, -0.3842))
+        public JuliaFractal() : this(new ColorsFactoryBase())
         {
         }
 
@@ -97,19 +68,8 @@ namespace Fractals
         /// <param name="movex">Смещение по Х</param>
         /// <param name="movey">Смещение по Y</param>
         /// <param name="c">Комплексное число для алгоритма Жюлиа</param>
-        protected JuliaFractal(IColorsFactory colorsFactory, int r, int b, int g, int width, int height, double zoom, int iterations, double movex, double movey, Complex c)
+        protected JuliaFractal(IColorsFactory colorsFactory, int r, int b, int g, int width, int height, double zoom, int iterations, double movex, double movey, Complex c) : base(colorsFactory, r, b, g, width, height, zoom, iterations, movex, movey)
         {
-            ColorsFactory = colorsFactory;
-            R = r;
-            G = g;
-            B = b;
-            Colors = ColorsFactory.GetColors(R, G, B);
-            Width = width;
-            Height = height;
-            Zoom = zoom;
-            Iterations = iterations;
-            MoveX = movex;
-            MoveY = movey;
             C = c;
         }
     }
