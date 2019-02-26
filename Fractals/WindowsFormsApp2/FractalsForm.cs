@@ -80,6 +80,7 @@ namespace WindowsFormsApp2
 
         private async void ButtonGenerateMF_Click(object sender, EventArgs e)
         {
+            ButtonGenerateMF.Enabled = false;
             var mf = _selectedFractal as MandelbrotFractal;
             if (mf == null)
                 return;
@@ -96,6 +97,7 @@ namespace WindowsFormsApp2
             mf.MoveY = double.TryParse(TextBoxMoveYMF.Text, out temp2) ? temp2 : mf.MoveY;
             _fractalviewmodels[0].Image = await mf.DrawAsync();
             PictureBoxMandelbrot.Image = _fractalviewmodels[0].Image;
+            ButtonGenerateMF.Enabled = true;
         }
 
         private void ButtonSaveMF_Click(object sender, EventArgs e)
@@ -229,6 +231,7 @@ namespace WindowsFormsApp2
 
         private async void ButtonGenerateJF_Click(object sender, EventArgs e)
         {
+            ButtonGenerateJF.Enabled = false;
             var jf = _selectedFractal as JuliaFractal;
             if (jf == null)
                 return;
@@ -248,10 +251,12 @@ namespace WindowsFormsApp2
             jf.C = new System.Numerics.Complex(tempR, tempI);
             _fractalviewmodels[1].Image = await jf.DrawAsync();
             PictureBoxJulia.Image = _fractalviewmodels[1].Image;
+            ButtonGenerateJF.Enabled = true;
         }
 
         private async void ButtonGenerateMMF_Click(object sender, EventArgs e)
         {
+            ButtonGenerateMMF.Enabled = false;
             var mmf = _selectedFractal as MandelbrotFractalModernized;
             if (mmf == null)
                 return;
@@ -268,6 +273,7 @@ namespace WindowsFormsApp2
             mmf.MoveY = double.TryParse(TextBoxMoveYMMF.Text, out temp2) ? temp2 : mmf.MoveY;
             _fractalviewmodels[2].Image = await mmf.DrawAsync();
             PictureBoxMandelbrotModernized.Image = _fractalviewmodels[2].Image;
+            ButtonGenerateMMF.Enabled = true;
         }
 
         private void ButtonSaveMMF_Click(object sender, EventArgs e)
@@ -277,6 +283,7 @@ namespace WindowsFormsApp2
 
         private async void ButtonGenerateTF_Click(object sender, EventArgs e)
         {
+            ButtonGenerateTF.Enabled = false;
             var tf = _selectedFractal as Tricorn;
             if (tf == null)
                 return;
@@ -293,6 +300,7 @@ namespace WindowsFormsApp2
             tf.MoveY = double.TryParse(TextBoxMoveYTF.Text, out temp2) ? temp2 : tf.MoveY;
             _fractalviewmodels[3].Image = await tf.DrawAsync();
             PictureBoxTricorn.Image = _fractalviewmodels[3].Image;
+            ButtonGenerateTF.Enabled = true;
         }
 
         private void ButtonSaveTF_Click(object sender, EventArgs e)
