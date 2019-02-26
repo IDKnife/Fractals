@@ -1,5 +1,6 @@
-﻿using System.Drawing;
-using System.Numerics;
+﻿using System.Numerics;
+using FastBitmapLib;
+using System.Linq;
 
 namespace Fractals
 {
@@ -9,30 +10,25 @@ namespace Fractals
     public class MandelbrotFractal : FractalBase, IMandelbrotFractal
     {
         /// <inheritdoc cref="FractalBase.DrawInner"/>
-        protected override void DrawInner(Bitmap fractal)
+        protected override void DrawInner(FastBitmap fractal)
         {
-            Complex C, newC, oldC;
-            for (var x = 0; x < Width; x++)
+            Enumerable.Range(0, Width * Height).AsParallel().ForAll(xy =>
             {
-                for (var y = 0; y < Height; y++)
-                {
-                    C = new Complex((x - Width / 2) / (0.5 * Zoom * Width) + MoveX,
+                Complex C, newC, oldC;
+                int x = xy % Width, y = xy / Width, i = 0;
+                C = new Complex((x - Width / 2) / (0.5 * Zoom * Width) + MoveX,
                                     (y - Height / 2) / (0.5 * Zoom * Height) + MoveY);
-                    newC = new Complex(0, 0);
-                    int i = 0;
-                    do
-                    {
-                        i++;
-                        oldC = newC;
-                        newC = new Complex(oldC.Real * oldC.Real - oldC.Imaginary * oldC.Imaginary + C.Real,
-                                                                2 * oldC.Real * oldC.Imaginary + C.Imaginary);
-                        if ((newC.Real * newC.Real + newC.Imaginary * newC.Imaginary) > 4)
-                            break;
-                    }
-                    while (i < Iterations);
-                    fractal.SetPixel(x, y, Colors[i % 256]);
+                newC = new Complex(0, 0);
+                for (; i < Iterations; i++)
+                {
+                    oldC = newC;
+                    newC = new Complex(oldC.Real * oldC.Real - oldC.Imaginary * oldC.Imaginary + C.Real,
+                                                            2 * oldC.Real * oldC.Imaginary + C.Imaginary);
+                    if ((newC.Real * newC.Real + newC.Imaginary * newC.Imaginary) > 4)
+                        break;
                 }
-            }
+                fractal.SetPixel(x, y, Colors[i % 256]);
+            });
         }
 
 

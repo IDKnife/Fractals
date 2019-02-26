@@ -1,6 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Drawing;
+using FastBitmapLib;
+using System.Threading.Tasks;
+
 namespace Fractals
 {
     /// <summary>
@@ -52,19 +53,28 @@ namespace Fractals
         public IColorsFactory ColorsFactory { get; set; }
 
         /// <inheritdoc cref="IImageBase.Draw"/>
-        virtual public Bitmap Draw()
+        public Bitmap Draw()
         {
             Colors = ColorsFactory.GetColors(R, G, B);
             var fractal = new Bitmap(Width, Height);
-            DrawInner(fractal);
+            FastBitmap fb = new FastBitmap(fractal);
+            fb.Lock();
+            DrawInner(fb);
+            fb.Unlock();
             return fractal;
+        }
+
+        /// <inheritdoc cref="IImageBase.Draw"/>
+        public Task<Bitmap> DrawAsync()
+        {
+            return Task.Run(() => Draw());
         }
 
         /// <summary>
         /// Метод, выполняющий отрисовку фрактала.
         /// </summary>
         /// <param name="fractal">Изображение фрактала</param>
-        protected abstract void DrawInner(Bitmap fractal);
+        protected abstract void DrawInner(FastBitmap fractal);
 
         /// <summary>
         ///  Инициализирует новый экземпляр класса <see cref="FractalBase"/> с заданными значениями поля фабрика цветов.

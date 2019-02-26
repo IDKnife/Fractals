@@ -81,9 +81,6 @@
             this.ButtonSaveJF = new System.Windows.Forms.Button();
             this.ButtonGenerateJF = new System.Windows.Forms.Button();
             this.ModernizedMandelbrot = new System.Windows.Forms.TabPage();
-            this.Tricorn = new System.Windows.Forms.TabPage();
-            this.PictureBoxMandelbrotModernized = new System.Windows.Forms.PictureBox();
-            this.PictureBoxTricorn = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
             this.ButtonSaveMMF = new System.Windows.Forms.Button();
             this.ButtonGenerateMMF = new System.Windows.Forms.Button();
@@ -105,6 +102,8 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
+            this.PictureBoxMandelbrotModernized = new System.Windows.Forms.PictureBox();
+            this.Tricorn = new System.Windows.Forms.TabPage();
             this.label34 = new System.Windows.Forms.Label();
             this.ButtonSaveTF = new System.Windows.Forms.Button();
             this.ButtonGenerateTF = new System.Windows.Forms.Button();
@@ -126,14 +125,15 @@
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
+            this.PictureBoxTricorn = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.Mandelbrot.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMandelbrot)).BeginInit();
             this.Julia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxJulia)).BeginInit();
             this.ModernizedMandelbrot.SuspendLayout();
-            this.Tricorn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMandelbrotModernized)).BeginInit();
+            this.Tricorn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTricorn)).BeginInit();
             this.SuspendLayout();
             // 
@@ -679,56 +679,6 @@
             this.ModernizedMandelbrot.Text = "ModernizedMandelbrot";
             this.ModernizedMandelbrot.UseVisualStyleBackColor = true;
             // 
-            // Tricorn
-            // 
-            this.Tricorn.Controls.Add(this.label34);
-            this.Tricorn.Controls.Add(this.ButtonSaveTF);
-            this.Tricorn.Controls.Add(this.ButtonGenerateTF);
-            this.Tricorn.Controls.Add(this.TextBoxMoveYTF);
-            this.Tricorn.Controls.Add(this.TextBoxMoveXTF);
-            this.Tricorn.Controls.Add(this.TextBoxIterationsTF);
-            this.Tricorn.Controls.Add(this.TextBoxZoomTF);
-            this.Tricorn.Controls.Add(this.TextBoxHeightTF);
-            this.Tricorn.Controls.Add(this.TextBoxWidthTF);
-            this.Tricorn.Controls.Add(this.TextBoxBTF);
-            this.Tricorn.Controls.Add(this.TextBoxGTF);
-            this.Tricorn.Controls.Add(this.TextBoxRTF);
-            this.Tricorn.Controls.Add(this.label35);
-            this.Tricorn.Controls.Add(this.label36);
-            this.Tricorn.Controls.Add(this.label37);
-            this.Tricorn.Controls.Add(this.label38);
-            this.Tricorn.Controls.Add(this.label39);
-            this.Tricorn.Controls.Add(this.label40);
-            this.Tricorn.Controls.Add(this.label41);
-            this.Tricorn.Controls.Add(this.label42);
-            this.Tricorn.Controls.Add(this.label43);
-            this.Tricorn.Controls.Add(this.PictureBoxTricorn);
-            this.Tricorn.Location = new System.Drawing.Point(4, 22);
-            this.Tricorn.Name = "Tricorn";
-            this.Tricorn.Padding = new System.Windows.Forms.Padding(3);
-            this.Tricorn.Size = new System.Drawing.Size(844, 562);
-            this.Tricorn.TabIndex = 3;
-            this.Tricorn.Text = "Tricorn";
-            this.Tricorn.UseVisualStyleBackColor = true;
-            // 
-            // PictureBoxMandelbrotModernized
-            // 
-            this.PictureBoxMandelbrotModernized.Location = new System.Drawing.Point(8, 6);
-            this.PictureBoxMandelbrotModernized.Name = "PictureBoxMandelbrotModernized";
-            this.PictureBoxMandelbrotModernized.Size = new System.Drawing.Size(548, 500);
-            this.PictureBoxMandelbrotModernized.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBoxMandelbrotModernized.TabIndex = 1;
-            this.PictureBoxMandelbrotModernized.TabStop = false;
-            // 
-            // PictureBoxTricorn
-            // 
-            this.PictureBoxTricorn.Location = new System.Drawing.Point(8, 6);
-            this.PictureBoxTricorn.Name = "PictureBoxTricorn";
-            this.PictureBoxTricorn.Size = new System.Drawing.Size(548, 500);
-            this.PictureBoxTricorn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBoxTricorn.TabIndex = 1;
-            this.PictureBoxTricorn.TabStop = false;
-            // 
             // label24
             // 
             this.label24.AutoSize = true;
@@ -911,6 +861,47 @@
             this.label33.Size = new System.Drawing.Size(15, 13);
             this.label33.TabIndex = 22;
             this.label33.Text = "R";
+            // 
+            // PictureBoxMandelbrotModernized
+            // 
+            this.PictureBoxMandelbrotModernized.Location = new System.Drawing.Point(8, 6);
+            this.PictureBoxMandelbrotModernized.Name = "PictureBoxMandelbrotModernized";
+            this.PictureBoxMandelbrotModernized.Size = new System.Drawing.Size(548, 500);
+            this.PictureBoxMandelbrotModernized.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxMandelbrotModernized.TabIndex = 1;
+            this.PictureBoxMandelbrotModernized.TabStop = false;
+            // 
+            // Tricorn
+            // 
+            this.Tricorn.Controls.Add(this.label34);
+            this.Tricorn.Controls.Add(this.ButtonSaveTF);
+            this.Tricorn.Controls.Add(this.ButtonGenerateTF);
+            this.Tricorn.Controls.Add(this.TextBoxMoveYTF);
+            this.Tricorn.Controls.Add(this.TextBoxMoveXTF);
+            this.Tricorn.Controls.Add(this.TextBoxIterationsTF);
+            this.Tricorn.Controls.Add(this.TextBoxZoomTF);
+            this.Tricorn.Controls.Add(this.TextBoxHeightTF);
+            this.Tricorn.Controls.Add(this.TextBoxWidthTF);
+            this.Tricorn.Controls.Add(this.TextBoxBTF);
+            this.Tricorn.Controls.Add(this.TextBoxGTF);
+            this.Tricorn.Controls.Add(this.TextBoxRTF);
+            this.Tricorn.Controls.Add(this.label35);
+            this.Tricorn.Controls.Add(this.label36);
+            this.Tricorn.Controls.Add(this.label37);
+            this.Tricorn.Controls.Add(this.label38);
+            this.Tricorn.Controls.Add(this.label39);
+            this.Tricorn.Controls.Add(this.label40);
+            this.Tricorn.Controls.Add(this.label41);
+            this.Tricorn.Controls.Add(this.label42);
+            this.Tricorn.Controls.Add(this.label43);
+            this.Tricorn.Controls.Add(this.PictureBoxTricorn);
+            this.Tricorn.Location = new System.Drawing.Point(4, 22);
+            this.Tricorn.Name = "Tricorn";
+            this.Tricorn.Padding = new System.Windows.Forms.Padding(3);
+            this.Tricorn.Size = new System.Drawing.Size(844, 562);
+            this.Tricorn.TabIndex = 3;
+            this.Tricorn.Text = "Tricorn";
+            this.Tricorn.UseVisualStyleBackColor = true;
             // 
             // label34
             // 
@@ -1095,6 +1086,15 @@
             this.label43.TabIndex = 22;
             this.label43.Text = "R";
             // 
+            // PictureBoxTricorn
+            // 
+            this.PictureBoxTricorn.Location = new System.Drawing.Point(8, 6);
+            this.PictureBoxTricorn.Name = "PictureBoxTricorn";
+            this.PictureBoxTricorn.Size = new System.Drawing.Size(548, 500);
+            this.PictureBoxTricorn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxTricorn.TabIndex = 1;
+            this.PictureBoxTricorn.TabStop = false;
+            // 
             // Fractals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1114,9 +1114,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxJulia)).EndInit();
             this.ModernizedMandelbrot.ResumeLayout(false);
             this.ModernizedMandelbrot.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMandelbrotModernized)).EndInit();
             this.Tricorn.ResumeLayout(false);
             this.Tricorn.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMandelbrotModernized)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTricorn)).EndInit();
             this.ResumeLayout(false);
 

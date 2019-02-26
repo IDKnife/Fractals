@@ -78,7 +78,7 @@ namespace WindowsFormsApp2
             TextBoxC_ImJF.Text = temp.C.Imaginary.ToString();
         }
 
-        private void ButtonGenerateMF_Click(object sender, EventArgs e)
+        private async void ButtonGenerateMF_Click(object sender, EventArgs e)
         {
             var mf = _selectedFractal as MandelbrotFractal;
             if (mf == null)
@@ -94,7 +94,7 @@ namespace WindowsFormsApp2
             mf.Iterations = int.TryParse(TextBoxIterationsMF.Text, out temp1) ? temp1 : mf.Iterations;
             mf.MoveX = double.TryParse(TextBoxMoveXMF.Text, out temp2) ? temp2 : mf.MoveX;
             mf.MoveY = double.TryParse(TextBoxMoveYMF.Text, out temp2) ? temp2 : mf.MoveY;
-            _fractalviewmodels[0].Image = mf.Draw();
+            _fractalviewmodels[0].Image = await mf.DrawAsync();
             PictureBoxMandelbrot.Image = _fractalviewmodels[0].Image;
         }
 
@@ -227,7 +227,7 @@ namespace WindowsFormsApp2
             _fractalviewmodels[1].Image.Save("JF.jpg");
         }
 
-        private void ButtonGenerateJF_Click(object sender, EventArgs e)
+        private async void ButtonGenerateJF_Click(object sender, EventArgs e)
         {
             var jf = _selectedFractal as JuliaFractal;
             if (jf == null)
@@ -246,11 +246,11 @@ namespace WindowsFormsApp2
             tempR = double.TryParse(TextBoxC_ReJF.Text, out temp2) ? temp2 : jf.C.Real;
             tempI = double.TryParse(TextBoxC_ImJF.Text, out temp2) ? temp2 : jf.C.Imaginary;
             jf.C = new System.Numerics.Complex(tempR, tempI);
-            _fractalviewmodels[1].Image = jf.Draw();
+            _fractalviewmodels[1].Image = await jf.DrawAsync();
             PictureBoxJulia.Image = _fractalviewmodels[1].Image;
         }
 
-        private void ButtonGenerateMMF_Click(object sender, EventArgs e)
+        private async void ButtonGenerateMMF_Click(object sender, EventArgs e)
         {
             var mmf = _selectedFractal as MandelbrotFractalModernized;
             if (mmf == null)
@@ -266,7 +266,7 @@ namespace WindowsFormsApp2
             mmf.Iterations = int.TryParse(TextBoxIterationsMMF.Text, out temp1) ? temp1 : mmf.Iterations;
             mmf.MoveX = double.TryParse(TextBoxMoveXMMF.Text, out temp2) ? temp2 : mmf.MoveX;
             mmf.MoveY = double.TryParse(TextBoxMoveYMMF.Text, out temp2) ? temp2 : mmf.MoveY;
-            _fractalviewmodels[2].Image = mmf.Draw();
+            _fractalviewmodels[2].Image = await mmf.DrawAsync();
             PictureBoxMandelbrotModernized.Image = _fractalviewmodels[2].Image;
         }
 
@@ -275,7 +275,7 @@ namespace WindowsFormsApp2
             _fractalviewmodels[2].Image.Save("MMF.jpg");
         }
 
-        private void ButtonGenerateTF_Click(object sender, EventArgs e)
+        private async void ButtonGenerateTF_Click(object sender, EventArgs e)
         {
             var tf = _selectedFractal as Tricorn;
             if (tf == null)
@@ -291,7 +291,7 @@ namespace WindowsFormsApp2
             tf.Iterations = int.TryParse(TextBoxIterationsTF.Text, out temp1) ? temp1 : tf.Iterations;
             tf.MoveX = double.TryParse(TextBoxMoveXTF.Text, out temp2) ? temp2 : tf.MoveX;
             tf.MoveY = double.TryParse(TextBoxMoveYTF.Text, out temp2) ? temp2 : tf.MoveY;
-            _fractalviewmodels[3].Image = tf.Draw();
+            _fractalviewmodels[3].Image = await tf.DrawAsync();
             PictureBoxTricorn.Image = _fractalviewmodels[3].Image;
         }
 

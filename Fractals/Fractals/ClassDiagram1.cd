@@ -30,7 +30,6 @@
       <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MandelbrotFractal.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Interface Name="Fractals.IColorsFactory" Collapsed="true">
     <Position X="5.25" Y="1.75" Width="1.5" />

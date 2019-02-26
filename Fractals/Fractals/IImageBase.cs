@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Threading.Tasks;
 
 namespace Fractals
 {
@@ -12,6 +13,12 @@ namespace Fractals
         /// </summary>
         /// <returns>Готовое изображение</returns>
         Bitmap Draw();
+
+        /// <summary>
+        /// Осуществляет ассинхронное создание изображения.
+        /// </summary>
+        /// <returns></returns>
+        Task<Bitmap> DrawAsync();
 
         /// <summary>
         /// Возвращает ширину изображения.
