@@ -7,7 +7,7 @@ namespace Fractals
     /// <summary>
     /// Представляет экземпляр фрактала Трикорн.
     /// </summary>
-    public class Tricorn : MandelbrotFractal
+    public class TricornFractal : MandelbrotFractal
     {
         /// <inheritdoc cref="FractalBase.DrawInner"/>
         protected override void DrawInner(FastBitmap fractal)
@@ -33,22 +33,22 @@ namespace Fractals
 
 
         /// <summary>
-        /// Инициализирует новый экземпляр класса <see cref="Tricorn"/> с заданным значением фабрики цветов.
+        /// Инициализирует новый экземпляр класса <see cref="TricornFractal"/> с заданным значением фабрики цветов.
         /// </summary>
         /// <param name="colorsFactory">Фабрика цветов</param>
-        public Tricorn(IColorsFactory colorsFactory) : base(colorsFactory)
+        public TricornFractal(IColorsFactory colorsFactory) : base(colorsFactory)
         {
         }
 
         /// <summary>
-        /// Инициализирует новый экземпляр класса <see cref="Tricorn"/> с базовыми значениями.
+        /// Инициализирует новый экземпляр класса <see cref="TricornFractal"/> с базовыми значениями.
         /// </summary>
-        public Tricorn() : base()
+        public TricornFractal() : base()
         {
         }
 
         /// <summary>
-        /// Инициализирует новый экземпляр класса <see cref="Tricorn"/> с заданными значениями.
+        /// Инициализирует новый экземпляр класса <see cref="TricornFractal"/> с заданными значениями.
         /// </summary>
         /// <param name="colorsFactory">Фабрика цветов</param>
         /// <param name="r">Компонент цвета r</param>
@@ -60,7 +60,7 @@ namespace Fractals
         /// <param name="iterations">Кол-во итераций</param>
         /// <param name="movex">Смещение по Х</param>
         /// <param name="movey">Смещение по Y</param>
-        protected Tricorn(IColorsFactory colorsFactory, int r, int b, int g, int width, int height, double zoom, int iterations, double movex, double movey) : base(colorsFactory, r, b, g, width, height, zoom, iterations, movex, movey)
+        protected TricornFractal(IColorsFactory colorsFactory, int r, int b, int g, int width, int height, double zoom, int iterations, double movex, double movey) : base(colorsFactory, r, b, g, width, height, zoom, iterations, movex, movey)
         {
         }
     }

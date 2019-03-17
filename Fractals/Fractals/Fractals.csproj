@@ -62,7 +62,7 @@
     <Compile Include="MandelbrotFractal.cs" />
     <Compile Include="MandelbrotFractalModernized.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tricorn.cs" />
+    <Compile Include="TricornFractal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

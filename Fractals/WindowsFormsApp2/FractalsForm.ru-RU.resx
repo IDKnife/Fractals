@@ -1,0 +1,634 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label22.Location" type="System.Drawing.Point, System.Drawing">
+    <value>597, 6</value>
+  </data>
+  <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 62</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>Мандельброт
+   Фрактал</value>
+  </data>
+  <data name="ButtonSaveMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>690, 380</value>
+  </data>
+  <data name="ButtonSaveMF.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="ButtonGenerateMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>603, 380</value>
+  </data>
+  <data name="ButtonGenerateMF.Text" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="TextBoxMoveYMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>665, 313</value>
+  </data>
+  <data name="TextBoxMoveXMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>665, 287</value>
+  </data>
+  <data name="TextBoxIterationsMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>665, 259</value>
+  </data>
+  <data name="TextBoxZoomMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>665, 231</value>
+  </data>
+  <data name="TextBoxHeightMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>665, 202</value>
+  </data>
+  <data name="TextBoxWidthMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>665, 169</value>
+  </data>
+  <data name="TextBoxBMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>665, 140</value>
+  </data>
+  <data name="TextBoxGMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>665, 112</value>
+  </data>
+  <data name="TextBoxRMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>665, 85</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>572, 316</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 13</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Смещение по У</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>573, 290</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 13</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Смещение по Х</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>600, 262</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Итерации</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>588, 234</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Увеличение</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>611, 205</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Высота</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>611, 172</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Ширина</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>620, 143</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Синий</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>604, 115</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 13</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Зеленый</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>604, 88</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 13</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Красный</value>
+  </data>
+  <data name="Mandelbrot.Text" xml:space="preserve">
+    <value>Мандельброт</value>
+  </data>
+  <data name="label23.Location" type="System.Drawing.Point, System.Drawing">
+    <value>596, 6</value>
+  </data>
+  <data name="label23.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 31</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>Жюлиа Фрактал</value>
+  </data>
+  <data name="TextBoxC_ImJF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>764, 329</value>
+  </data>
+  <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>Мнимая</value>
+  </data>
+  <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
+    <value>589, 332</value>
+  </data>
+  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>Реальная</value>
+  </data>
+  <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
+    <value>569, 332</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>585, 293</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 13</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Смещение по У</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>586, 263</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 13</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Смещение по Х</value>
+  </data>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>609, 235</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Итерации</value>
+  </data>
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>598, 207</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Увеличение</value>
+  </data>
+  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>621, 178</value>
+  </data>
+  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Высота</value>
+  </data>
+  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>620, 145</value>
+  </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Ширина</value>
+  </data>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>627, 116</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Синий</value>
+  </data>
+  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>614, 88</value>
+  </data>
+  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 13</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Зеленый</value>
+  </data>
+  <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>614, 61</value>
+  </data>
+  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 13</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Красный</value>
+  </data>
+  <data name="ButtonSaveJF.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="ButtonGenerateJF.Text" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="Julia.Text" xml:space="preserve">
+    <value>Жюлиа</value>
+  </data>
+  <data name="label24.Location" type="System.Drawing.Point, System.Drawing">
+    <value>562, 16</value>
+  </data>
+  <data name="label24.Size" type="System.Drawing.Size, System.Drawing">
+    <value>275, 93</value>
+  </data>
+  <data name="label24.Text" xml:space="preserve">
+    <value>Детализированный
+     Мандельброт
+         Фрактал</value>
+  </data>
+  <data name="ButtonSaveMMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>707, 419</value>
+  </data>
+  <data name="ButtonSaveMMF.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="ButtonGenerateMMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>620, 419</value>
+  </data>
+  <data name="ButtonGenerateMMF.Text" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="TextBoxMoveYMMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>682, 352</value>
+  </data>
+  <data name="TextBoxMoveXMMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>682, 326</value>
+  </data>
+  <data name="TextBoxIterationsMMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>681, 298</value>
+  </data>
+  <data name="TextBoxZoomMMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>682, 270</value>
+  </data>
+  <data name="TextBoxHeightMMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>682, 241</value>
+  </data>
+  <data name="TextBoxWidthMMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>682, 208</value>
+  </data>
+  <data name="TextBoxBMMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>682, 179</value>
+  </data>
+  <data name="TextBoxGMMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>682, 151</value>
+  </data>
+  <data name="TextBoxRMMF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>682, 124</value>
+  </data>
+  <data name="label25.Location" type="System.Drawing.Point, System.Drawing">
+    <value>586, 355</value>
+  </data>
+  <data name="label25.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 13</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>Смещение по У</value>
+  </data>
+  <data name="label26.Location" type="System.Drawing.Point, System.Drawing">
+    <value>590, 329</value>
+  </data>
+  <data name="label26.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 13</value>
+  </data>
+  <data name="label26.Text" xml:space="preserve">
+    <value>Смещение по Х</value>
+  </data>
+  <data name="label27.Location" type="System.Drawing.Point, System.Drawing">
+    <value>620, 301</value>
+  </data>
+  <data name="label27.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>Итерации</value>
+  </data>
+  <data name="label28.Location" type="System.Drawing.Point, System.Drawing">
+    <value>608, 273</value>
+  </data>
+  <data name="label28.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>Увеличение</value>
+  </data>
+  <data name="label29.Location" type="System.Drawing.Point, System.Drawing">
+    <value>628, 244</value>
+  </data>
+  <data name="label29.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="label29.Text" xml:space="preserve">
+    <value>Высота</value>
+  </data>
+  <data name="label30.Location" type="System.Drawing.Point, System.Drawing">
+    <value>628, 211</value>
+  </data>
+  <data name="label30.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="label30.Text" xml:space="preserve">
+    <value>Ширина</value>
+  </data>
+  <data name="label31.Location" type="System.Drawing.Point, System.Drawing">
+    <value>637, 182</value>
+  </data>
+  <data name="label31.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>Синий</value>
+  </data>
+  <data name="label32.Location" type="System.Drawing.Point, System.Drawing">
+    <value>628, 154</value>
+  </data>
+  <data name="label32.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 13</value>
+  </data>
+  <data name="label32.Text" xml:space="preserve">
+    <value>Зеленый</value>
+  </data>
+  <data name="label33.Location" type="System.Drawing.Point, System.Drawing">
+    <value>624, 127</value>
+  </data>
+  <data name="label33.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 13</value>
+  </data>
+  <data name="label33.Text" xml:space="preserve">
+    <value>Красный</value>
+  </data>
+  <data name="ModernizedMandelbrot.Text" xml:space="preserve">
+    <value>ДетализированныйМандельброт</value>
+  </data>
+  <data name="label34.Location" type="System.Drawing.Point, System.Drawing">
+    <value>587, 22</value>
+  </data>
+  <data name="label34.Size" type="System.Drawing.Size, System.Drawing">
+    <value>251, 31</value>
+  </data>
+  <data name="label34.Text" xml:space="preserve">
+    <value>Трикорн Фрактал</value>
+  </data>
+  <data name="ButtonSaveTF.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="ButtonGenerateTF.Text" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="label35.Location" type="System.Drawing.Point, System.Drawing">
+    <value>589, 297</value>
+  </data>
+  <data name="label35.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 13</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>Смещение по У</value>
+  </data>
+  <data name="label36.Location" type="System.Drawing.Point, System.Drawing">
+    <value>590, 271</value>
+  </data>
+  <data name="label36.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 13</value>
+  </data>
+  <data name="label36.Text" xml:space="preserve">
+    <value>Смещение по Х</value>
+  </data>
+  <data name="label37.Location" type="System.Drawing.Point, System.Drawing">
+    <value>617, 243</value>
+  </data>
+  <data name="label37.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="label37.Text" xml:space="preserve">
+    <value>Итерации</value>
+  </data>
+  <data name="label38.Location" type="System.Drawing.Point, System.Drawing">
+    <value>608, 215</value>
+  </data>
+  <data name="label38.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="label38.Text" xml:space="preserve">
+    <value>Увеличение</value>
+  </data>
+  <data name="label39.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="label39.Text" xml:space="preserve">
+    <value>Высота</value>
+  </data>
+  <data name="label40.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="label40.Text" xml:space="preserve">
+    <value>Ширина</value>
+  </data>
+  <data name="label41.Location" type="System.Drawing.Point, System.Drawing">
+    <value>629, 124</value>
+  </data>
+  <data name="label41.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="label41.Text" xml:space="preserve">
+    <value>Синий</value>
+  </data>
+  <data name="label42.Location" type="System.Drawing.Point, System.Drawing">
+    <value>618, 96</value>
+  </data>
+  <data name="label42.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 13</value>
+  </data>
+  <data name="label42.Text" xml:space="preserve">
+    <value>Зеленый</value>
+  </data>
+  <data name="label43.Location" type="System.Drawing.Point, System.Drawing">
+    <value>618, 69</value>
+  </data>
+  <data name="label43.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 13</value>
+  </data>
+  <data name="label43.Text" xml:space="preserve">
+    <value>Красный</value>
+  </data>
+  <data name="Tricorn.Text" xml:space="preserve">
+    <value>Трикорн</value>
+  </data>
+  <data name="russianToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 22</value>
+  </data>
+  <data name="russianToolStripMenuItem.Text" xml:space="preserve">
+    <value>Русский</value>
+  </data>
+  <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 22</value>
+  </data>
+  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
+    <value>Английский</value>
+  </data>
+  <data name="changeLocalizationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="changeLocalizationToolStripMenuItem.Text" xml:space="preserve">
+    <value>Изменить язык</value>
+  </data>
+  <data name="viewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 24</value>
+  </data>
+  <data name="viewToolStripMenuItem.Text" xml:space="preserve">
+    <value>Вид</value>
+  </data>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 5</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 24</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Фракталы</value>
+  </data>
+</root>

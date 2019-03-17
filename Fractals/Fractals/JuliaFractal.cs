@@ -19,19 +19,19 @@ namespace Fractals
         {
             Enumerable.Range(0, Width * Height).AsParallel().ForAll(xy =>
               {
-                  Complex newC, oldC;
-                  int x = xy % Width, y = xy / Width, i = 0;
-                  newC = new Complex(1.5 * (x - Width / 2) / (0.5 * Zoom * Width) + MoveX,
+                 Complex newC, oldC;
+                 int x = xy % Width, y = xy / Width, i = 0;
+                 newC = new Complex(1.5 * (x - Width / 2) / (0.5 * Zoom * Width) + MoveX,
                                                    (y - Height / 2) / (0.5 * Zoom * Height) + MoveY);
-                  for (; i < Iterations; i++)
-                  {
-                      oldC = newC;
-                      newC = new Complex(oldC.Real * oldC.Real - oldC.Imaginary * oldC.Imaginary + C.Real,
+                 for (; i < Iterations; i++)
+                 {
+                     oldC = newC;
+                     newC = new Complex(oldC.Real * oldC.Real - oldC.Imaginary * oldC.Imaginary + C.Real,
                                                               2 * oldC.Real * oldC.Imaginary + C.Imaginary);
-                      if ((newC.Real * newC.Real + newC.Imaginary * newC.Imaginary) > 4)
-                          break;
-                  }
-                fractal.SetPixel(x, y, Colors[i % 256]);
+                     if ((newC.Real * newC.Real + newC.Imaginary * newC.Imaginary) > 4)
+                         break;
+                 }
+                 fractal.SetPixel(x, y, Colors[i % 256]);
               });
         }
 

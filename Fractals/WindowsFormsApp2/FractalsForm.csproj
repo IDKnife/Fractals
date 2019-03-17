@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{477C5C9F-0E45-4A9E-B0FF-7772084D89C3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WindowsFormsApp2</RootNamespace>
-    <AssemblyName>WindowsFormsApp2</AssemblyName>
+    <RootNamespace>FractalsForm</RootNamespace>
+    <AssemblyName>FractalsForm</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -55,7 +55,13 @@
     <Compile Include="FractalViewModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FractalsForm.ksh-DE.resx">
+      <DependentUpon>FractalsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FractalsForm.resx">
+      <DependentUpon>FractalsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FractalsForm.ru-RU.resx">
       <DependentUpon>FractalsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -66,6 +72,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

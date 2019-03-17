@@ -1,10 +1,10 @@
 ﻿using System.Drawing;
 using Fractals;
 
-namespace WindowsFormsApp2
+namespace FractalsForm
 {
     /// <summary>
-    /// Экземпляр модели данных фракталаю 
+    /// Экземпляр модели данных фрактала. 
     /// </summary>
     class FractalViewModel
     {

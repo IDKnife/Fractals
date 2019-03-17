@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{0CAA75BD-1756-4B4F-A0E2-C93C125B0D55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp2", "WindowsFormsApp2\WindowsFormsApp2.csproj", "{477C5C9F-0E45-4A9E-B0FF-7772084D89C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractalsForm", "WindowsFormsApp2\FractalsForm.csproj", "{477C5C9F-0E45-4A9E-B0FF-7772084D89C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
